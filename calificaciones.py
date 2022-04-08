@@ -6,4 +6,4 @@ def calificaciones(fichero):
         for linea in f:
             calificaciones.append(linea.split())
     return calificaciones
-    
+
