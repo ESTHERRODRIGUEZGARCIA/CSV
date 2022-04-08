@@ -1,9 +1,8 @@
-# Una función que reciba el fichero de calificaciones y devuelva una lista de diccionarios con las calificaciones de cada alumno.
 
-def calificaciones(fichero):
+def funcion1(calificaciones):
     calificaciones = []
-    with open(fichero, 'r') as f:
+    with open(funcion1, 'r') as f:
         for linea in f:
-            calificaciones.append(linea.split())
-    return calificaciones
+            funcion1.append(linea.split())
+    return funcion1
 
