@@ -44,6 +44,7 @@ def funcion3(calificaciones):
                 aprobados.append(i)
             else:
                 suspensos.append(i)
+        file.close()
         return aprobados, suspensos
 
 
