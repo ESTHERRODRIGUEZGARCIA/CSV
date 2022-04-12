@@ -5,7 +5,7 @@ import csv
 
 def funcion1():
     nombre_archivo = "calificaciones.csv"
-    with open(nombre_archivo, 'r', newline='') as file:
+    with open(nombre_archivo, 'r') as file:
         reader = csv.reader(file, delimiter=';')
         next(reader, None) # omitir el encabezado
         calificaciones = []
@@ -20,7 +20,7 @@ def funcion1():
             Practicas = i[7]
             OrdinarioPracticas = i[8]
             Final = i[9]
-            calificaciones.append({"Apellidos": Apellidos, "Nombre": Nombre, "porcentaje de Asistencia": Asistencia, "Parcial 1": Parcial1, "Parcial 2": Parcial2, "Ordinario 1": Ordinario1, "Ordinario 2": Ordinario2, "Prácticas": Practicas, "Ordinario Prácticas": OrdinarioPracticas, "Con una nota final de": Final})
+            file.append({"Apellidos": Apellidos, "Nombre": Nombre, "porcentaje de Asistencia": Asistencia, "Parcial 1": Parcial1, "Parcial 2": Parcial2, "Ordinario 1": Ordinario1, "Ordinario 2": Ordinario2, "Prácticas": Practicas, "Ordinario Prácticas": OrdinarioPracticas, "Con una nota final de": Final})
         return calificaciones
         
 
