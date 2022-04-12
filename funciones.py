@@ -13,6 +13,7 @@ def funcion1():
             calificaciones.append(i)
         file.close()
         return calificaciones
+        print(f"Apellidos: '{Apellidos} Nombre: {Nombre}, % de asistencia: {Asistencia}, nota del primer parcial: {Parcial1}, segundo parcial: {Parcial2}, nota del primer ordinario: {Ordinario1}, segundo ordinario: {Ordinario2}, nota prácticas: {Practicas}, nota practicas ordinario: {PracticasOrdinario}, con una nota final de {Final}")
 
 
 
