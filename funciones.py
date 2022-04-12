@@ -32,19 +32,14 @@ def funcion2():
     nombre_archivo = "calificaciones.csv"
     with open(nombre_archivo, 'r') as file:
         reader = csv.reader(file, delimiter=';')
-        for i in reader:
-            Apellidos = i[0]
-            Nombre = i[1]
-            Parcial1 = i[3]
-            Parcial2 = i[4]
-            Ordinario1 = i[5]
-            Ordinario2 = i[6]
-            Practicas = i[7]
-            OrdinarioPracticas = i[8]
-            for j in i:
-                Final = float[Parcial1]*0.3 + float[Parcial2]*0.3 + float[Practicas]*0.4 + float[OrdinarioPracticas]*0.4
-            print(f"Nombre y Apellidos: '{Nombre} {Apellidos} con una nota final de {Final}")
+        for i in range(len(reader)):
+            reader[i]["Nota final"] = (float(reader[i]["Parcial 1"])*0.3)+(float(reader[i]["Parcial 2"])*0.3)+(float(reader[i]["Ordinario Prácticas"])*0.4)
+            Final = reader[i]["Nota final"]
+            Nombre = reader[i]["Nombre"]
+            Apellidos = reader[i]["Apellidos"]
+        print(f"Nombre y Apellidos: '{Nombre} {Apellidos} con una nota final de {Final}")
         file.close()
+
 funcion2()
 
 
