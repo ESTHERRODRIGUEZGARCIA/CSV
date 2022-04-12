@@ -32,7 +32,6 @@ def funcion2(calificaciones):
     linea = linea.rstrip('\n')
     separador = ";"
     lista = linea.split(separador)
-    
     with open(nombre_archivo, 'w', newline='') as file:
         writer = csv.writer(file, delimiter=';')
         for i in calificaciones:
