@@ -32,7 +32,7 @@ def funcion2():
     nombre_archivo = "calificaciones.csv"
     with open(nombre_archivo, 'r') as file:
         reader = csv.reader(file, delimiter=';')
-        for i in range(len(reader)):
+        for i in reader:
             reader[i]["Nota final"] = (float(reader[i]["Parcial 1"])*0.3)+(float(reader[i]["Parcial 2"])*0.3)+(float(reader[i]["Ordinario Prácticas"])*0.4)
             Final = reader[i]["Nota final"]
             Nombre = reader[i]["Nombre"]
