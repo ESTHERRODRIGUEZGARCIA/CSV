@@ -13,6 +13,3 @@ def elegir():
     else:
         print("Sólo son válidos los valores 1,2 y 3.\n")
 elegir()
-
-if __name__ == "__main__":
-    elegir()
