@@ -34,14 +34,16 @@ def funcion2(calificaciones):
 
 # crear una función que reciba una lista de diccionarios y devuelva dos listas, una con los aprobados y otra con los suspensos. Para aprobar: asistencia mayor o igual que el 75%, nota parciales y prácticas mayor o igual que 4 y nota final mayor o igual que 5.
 def funcion3(calificaciones):
-    calificaciones = []
-    aprobados = []
-    suspensos = []
-    for i in calificaciones:
-        if float(i["Asistencia"]) >= 75 and float(i["Parcial1"]) >= 4 and float(i["Parcial2"]) >= 4 and float(i["Ordinario1"]) >= 4 and float(i["Ordinario2"]) >= 4 and float(i["Practicas"]) >= 4 and float(i["OrdinarioPracticas"]) >= 4 and float(i["Final"]) >= 5:
-            aprobados.append(i)
-        else:
-            suspensos.append(i)
-    return aprobados, suspensos
+    with open("calificaciones.csv", newline='') as file:
+        reader = csv.reader(file, delimiter=';')
+        calificaciones = []
+        aprobados = []
+        suspensos = []
+        for i in calificaciones:
+            if float(i["Asistencia"]) >= 75 and float(i["Parcial1"]) >= 4 and float(i["Parcial2"]) >= 4 and float(i["Ordinario1"]) >= 4 and float(i["Ordinario2"]) >= 4 and float(i["Practicas"]) >= 4 and float(i["OrdinarioPracticas"]) >= 4 and float(i["Final"]) >= 5:
+                aprobados.append(i)
+            else:
+                suspensos.append(i)
+        return aprobados, suspensos
 
 
