@@ -4,23 +4,17 @@ import csv
 # crear una función que reciba el fichero de calificaciones y devuelva una lista de diccionarios, donde cada diccionario contiene la información de los exámenes y la asistencia de un alumno. La lista tiene que estar ordenada por apellidos.
 
 def funcion1():
-    with open("calificaciones.csv", newline='') as file:
+    nombre_archivo = "calificaciones.csv"
+    with open(nombre_archivo, 'r', newline='') as file:
         reader = csv.reader(file, delimiter=';')
+        next(reader, None) # omitir el encabezado
         calificaciones = []
-        n = 0
-        lista = []
-        for row in reader:
-            n+=1
-            if n == 1:
-                for i in row:
-                    lista.append(i)
-            else:
-                Dictionary1 = {}
-                for i in range(len(row)):
-                    Dictionary1[lista[i]] = row[i]
-                lista.append(Dictionary1)
-    file.close()
-    return calificaciones
+        for i in reader:
+            calificaciones.append(i)
+        file.close()
+        return calificaciones
+
+
 
 
 # Apellidos;Nombre;Asistencia;Parcial1;Parcial2;Ordinario1;Ordinario2;Practicas;OrdinarioPracticas;Final
