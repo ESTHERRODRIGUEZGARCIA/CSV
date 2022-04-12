@@ -27,22 +27,22 @@ def funcion1():
 # crear una función que reciba una lista de diccionarios y añada a cada diccionario un nuevo par con la nota final del curso. cada parcial 30%; examen de prácticas 40%.
 def funcion2(calificaciones):
     nombre_archivo = "calificaciones.csv"
-    # omitir el encabezado
-    next(file, None)
-    linea = linea.rstrip('\n')
-    separador = ";"
-    lista = linea.split(separador)
     with open(nombre_archivo, 'w', newline='') as file:
-        writer = csv.writer(file, delimiter=';')
+        # omitir el encabezado
+        next(file, None)
+        linea = linea.rstrip('\n')
+        separador = ";"
+        lista = linea.split(separador)
+            writer = csv.writer(file, delimiter=';')
+            for i in calificaciones:
+                i["Final"] = (float(i["Parcial1"]) * 0.3) + (float(i["Parcial2"]) * 0.3) + (float(i["Ordinario1"]) * 0.3) + (float(i["Ordinario2"]) * 0.3) + (float(i["Practicas"]) * 0.4)
+                writer.writerow([i["Apellidos"], i["Nombre"], i["Asistencia"], i["Parcial1"], i["Parcial2"], i["Ordinario1"], i["Ordinario2"], i["Practicas"], i["OrdinarioPracticas"], i["Final"]])
+        calificaciones = []
+
         for i in calificaciones:
-            i["Final"] = (float(i["Parcial1"]) * 0.3) + (float(i["Parcial2"]) * 0.3) + (float(i["Ordinario1"]) * 0.3) + (float(i["Ordinario2"]) * 0.3) + (float(i["Practicas"]) * 0.4)
-            writer.writerow([i["Apellidos"], i["Nombre"], i["Asistencia"], i["Parcial1"], i["Parcial2"], i["Ordinario1"], i["Ordinario2"], i["Practicas"], i["OrdinarioPracticas"], i["Final"]])
-    calificaciones = []
-
-    for i in calificaciones:
-        i["Final"] = (float(i["Parcial1"])*0.3 + float(i["Parcial2"])*0.3 + float(i["Ordinario1"])*0.1 + float(i["Ordinario2"])*0.1 + float(i["Practicas"])*0.4 + float(i["OrdinarioPracticas"])*0.4)
-    return calificaciones
-
+            i["Final"] = (float(i["Parcial1"])*0.3 + float(i["Parcial2"])*0.3 + float(i["Ordinario1"])*0.1 + float(i["Ordinario2"])*0.1 + float(i["Practicas"])*0.4 + float(i["OrdinarioPracticas"])*0.4)
+        return calificaciones
+        print(f"Nombre: '{Nombre} con una nota final de {Final}")
 # crear una función que reciba una lista de diccionarios y devuelva dos listas, una con los aprobados y otra con los suspensos. Para aprobar: asistencia mayor o igual que el 75%, nota parciales y prácticas mayor o igual que 4 y nota final mayor o igual que 5.
 def funcion3(calificaciones):
     with open("calificaciones.csv", newline='') as file:
