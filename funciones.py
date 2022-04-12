@@ -41,10 +41,9 @@ def funcion2():
             Ordinario2 = i[6]
             Practicas = i[7]
             OrdinarioPracticas = i[8]
-            Final = ( float{Parcial1} + float{Parcial2} + float{Ordinario1} + float{Ordinario2} )* 0.3 + ( float{Practicas} + float{OrdinarioPracticas} ) * 0.4
-            for i in nombre_archivo:
-                print(f"Nombre y Apellidos: '{Nombre} {Apellidos} con una nota final de {Final}")
-            file.close()
+            Final = (float(Parcial1) * 0.3) + (float(Parcial2) * 0.3) + (float(Ordinario1) * 0.4) + (float(Ordinario2) * 0.4) + (float(Practicas) * 0.4) + (float(OrdinarioPracticas) * 0.4)
+            print(f"Nombre y Apellidos: '{Nombre} {Apellidos} con una nota final de {Final}")
+        file.close()
 funcion2()
 
 
