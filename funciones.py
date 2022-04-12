@@ -19,7 +19,9 @@ def funcion1():
             Ordinario2 = i[6]
             Practicas = i[7]
             OrdinarioPracticas = i[8]
-            print(f"Apellidos: '{Apellidos}, Nombre: {Nombre}, % de Asistencia: {Asistencia}, Parcial 1: {Parcial1}, Parcial 2: {Parcial2}, Ordinario 1: {Ordinario1}, Ordinario 2: {Ordinario2}, Prácticas: {Practicas}, Ordinario Prácticas: {OrdinarioPracticas}\n")
+            for i in nombre_archivo:
+                print(f"Apellidos: '{Apellidos}, Nombre: {Nombre}, % de Asistencia: {Asistencia}, Parcial 1: {Parcial1}, Parcial 2: {Parcial2}, Ordinario 1: {Ordinario1}, Ordinario 2: {Ordinario2}, Prácticas: {Practicas}, Ordinario Prácticas: {OrdinarioPracticas}\n")
+            file.close()
             calificaciones.append(i)
         file.close()
         return calificaciones
@@ -35,7 +37,6 @@ def funcion2():
         for i in reader:
             Apellidos = i[0]
             Nombre = i[1]
-            Asistencia = i[2]
             Parcial1 = i[3]
             Parcial2 = i[4]
             Ordinario1 = i[5]
@@ -43,7 +44,10 @@ def funcion2():
             Practicas = i[7]
             OrdinarioPracticas = i[8]
             Final = ( {Parcial1} + {Parcial2} + {Ordinario1} + {Ordinario2} )* 0.3 + ( {Practicas} + {OrdinarioPracticas} ) * 0.4
-            print(f"Nombre y Apellidos: '{Nombre} {Apellidos} con una nota final de {Final}")
+            for i in nombre_archivo:
+                print(f"Nombre y Apellidos: '{Nombre} {Apellidos} con una nota final de {Final}")
+            file.close()
+
 
 
 
