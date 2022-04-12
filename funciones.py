@@ -5,15 +5,28 @@ import csv
 
 def funcion1():
     nombre_archivo = "calificaciones.csv"
-    with open(nombre_archivo, 'r') as file:
-        reader = csv.reader(file, delimiter=';')
+    with open(nombre_archivo, 'r') as csvfile:
+        reader = csv.reader(csvfile, delimiter=';')
         next(reader, None) # omitir el encabezado
-        calificaciones = []
+        notas = []
         for i in reader:
-            calificaciones.append(i)
-        file.close()
-        return calificaciones
-        
+            Apellidos = i[0]
+            Nombre = i[1]
+            Asistencia = i[2]
+            Parcial1 = i[3]
+            Parcial2 = i[4]
+            Ordinario1 = i[5]
+            Ordinario2 = i[6]
+            Practicas = i[7]
+            OrdinarioPracticas = i[8]
+            notas.append(i)
+            print(f"Apellidos: '{Apellidos}, Nombre: {Nombre}, % de Asistencia: {Asistencia}, Parcial 1: {Parcial1}, Parcial 2: {Parcial2}, Ordinario 1: {Ordinario1}, Ordinario 2: {Ordinario2}, Prácticas: {Practicas}, Ordinario Prácticas: {OrdinarioPracticas}\n")
+        csvfile.close()
+
+funcion1()
+
+
+
 funcion1()
 
 
