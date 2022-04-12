@@ -20,7 +20,7 @@ def funcion1():
             Practicas = i[7]
             OrdinarioPracticas = i[8]
             notas.append(i)
-            print(f"Apellidos: '{Apellidos}\nNombre: {Nombre}\n% de Asistencia: {Asistencia}\nParcial 1: {Parcial1}\nParcial 2: {Parcial2}\nOrdinario 1: {Ordinario1}\nOrdinario 2: {Ordinario2}\nPrácticas: {Practicas}\nOrdinario Prácticas: {OrdinarioPracticas}\n")
+            print(f"Apellidos: {Apellidos}\nNombre: {Nombre}\n% de Asistencia: {Asistencia}\nParcial 1: {Parcial1}\nParcial 2: {Parcial2}\nOrdinario 1: {Ordinario1}\nOrdinario 2: {Ordinario2}\nPrácticas: {Practicas}\nOrdinario Prácticas: {OrdinarioPracticas}\n")
         csvfile.close()
 
 funcion1()
