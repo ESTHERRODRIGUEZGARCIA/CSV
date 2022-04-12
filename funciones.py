@@ -53,7 +53,6 @@ funcion2()
 def funcion3():
     with open("calificaciones.csv", newline='') as file:
         reader = csv.reader(file, delimiter=';')
-        calificaciones = []
         aprobados = []
         suspensos = []
         for i in reader:
