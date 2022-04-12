@@ -18,12 +18,10 @@ def funcion1(calificaciones):
                 dic = {}
 
                 for i in range(len(row)):
-                    notas = calificaciones[i].split(',')
-                    notas.append(row[i])
-                    calificaciones[i] = ','.join(notas)
-                    dic.setdefault(calificaciones[i], 0)
-                    dic[calificaciones[i]] += 1
-                    
+                    notas = calificaciones[i].split(":")
+                    dic[notas[0]] = row[i]
+                    dic.setdefault(calificaciones[i], notas)
+
                 calificaciones.append(dic)
 
     file.close()
