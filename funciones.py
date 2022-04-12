@@ -26,12 +26,6 @@ def funcion1():
 funcion1()
 
 
-
-funcion1()
-
-
-
-
 # Apellidos;Nombre;Asistencia;Parcial1;Parcial2;Ordinario1;Ordinario2;Practicas;OrdinarioPracticas;Final
 # crear una función que reciba una lista de diccionarios y añada a cada diccionario un nuevo par con la nota final del curso. cada parcial 30%; examen de prácticas 40%.
 def funcion2():
@@ -47,7 +41,7 @@ def funcion2():
             Ordinario2 = i[6]
             Practicas = i[7]
             OrdinarioPracticas = i[8]
-            Final = ( {Parcial1} + {Parcial2} + {Ordinario1} + {Ordinario2} )* 0.3 + ( {Practicas} + {OrdinarioPracticas} ) * 0.4
+            Final = ( float{Parcial1} + float{Parcial2} + float{Ordinario1} + float{Ordinario2} )* 0.3 + ( float{Practicas} + float{OrdinarioPracticas} ) * 0.4
             for i in nombre_archivo:
                 print(f"Nombre y Apellidos: '{Nombre} {Apellidos} con una nota final de {Final}")
             file.close()
