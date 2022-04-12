@@ -26,6 +26,29 @@ def funcion1():
 
 # crear una función que reciba una lista de diccionarios y añada a cada diccionario un nuevo par con la nota final del curso. cada parcial 30%; examen de prácticas 40%.
 def funcion2(calificaciones):
+    nombre_archivo = "calificaciones.csv"
+    # omitir el encabezado
+    next(file, None)
+    linea = linea.rstrip('\n')
+    separador = ";"
+    lista = linea.split(separador)
+    apellido = lista[0]
+    nombre = lista[1]
+    asistencia = lista[2]
+    parcial1 = lista[3]
+    parcial2 = lista[4]
+    ordinario1 = lista[5]
+    ordinario2 = lista[6]
+    practicas = lista[7]
+    ordinarioPracticas = lista[8]
+    final = lista[9]
+    calificaciones.append({"Apellidos": apellido, "Nombre": nombre, "Asistencia": asistencia, "Parcial1": parcial1, "Parcial2": parcial2, "Ordinario1": ordinario1, "Ordinario2": ordinario2, "Practicas": practicas, "OrdinarioPracticas": ordinarioPracticas, "Final": final})
+    return calificaciones
+    with open(nombre_archivo, 'w', newline='') as file:
+        writer = csv.writer(file, delimiter=';')
+        for i in calificaciones:
+            i["Final"] = (float(i["Parcial1"]) * 0.3) + (float(i["Parcial2"]) * 0.3) + (float(i["Ordinario1"]) * 0.3) + (float(i["Ordinario2"]) * 0.3) + (float(i["Practicas"]) * 0.4)
+            writer.writerow([i["Apellidos"], i["Nombre"], i["Asistencia"], i["Parcial1"], i["Parcial2"], i["Ordinario1"], i["Ordinario2"], i["Practicas"], i["OrdinarioPracticas"], i["Final"]])
     calificaciones = []
 
     for i in calificaciones:
