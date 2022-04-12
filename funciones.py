@@ -30,7 +30,7 @@ def funcion1():
 # crear una función que reciba una lista de diccionarios y añada a cada diccionario un nuevo par con la nota final del curso. cada parcial 30%; examen de prácticas 40%.
 def funcion2():
     nombre_archivo = "calificaciones.csv"
-    with open(nombre_archivo, 'w', newline='') as file:
+    with open(nombre_archivo, 'r') as file:
         reader = csv.reader(file, delimiter=';')
         next(reader, None) # omitir el encabezado
         for i in reader:
