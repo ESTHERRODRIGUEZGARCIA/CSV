@@ -25,6 +25,8 @@ def funcion1():
             calificaciones.append(i)
         file.close()
         return calificaciones
+funcion1()
+
 
 
 
@@ -47,9 +49,7 @@ def funcion2():
             for i in nombre_archivo:
                 print(f"Nombre y Apellidos: '{Nombre} {Apellidos} con una nota final de {Final}")
             file.close()
-
-
-
+funcion2()
 
 
 # crear una función que reciba una lista de diccionarios y devuelva dos listas, una con los aprobados y otra con los suspensos. Para aprobar: asistencia mayor o igual que el 75%, nota parciales y prácticas mayor o igual que 4 y nota final mayor o igual que 5.
@@ -67,4 +67,4 @@ def funcion3(calificaciones):
         file.close()
         return aprobados, suspensos
 
-
+funcion3()
