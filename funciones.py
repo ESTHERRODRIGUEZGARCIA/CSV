@@ -42,7 +42,14 @@ def funcion2():
             Ordinario2 = i[6]
             Practicas = i[7]
             OrdinarioPracticas = i[8]
-            notafinal = (float(Parcial1) * 0.3 + float(Parcial2) * 0.3 + float(Ordinario1) * 0.3 + float(Ordinario2) * 0.3 + float(Practicas) * 0.4 + float(OrdinarioPracticas) * 0.4)
+            notas = [Parcial1, Parcial2, Ordinario1, Ordinario2, Practicas, OrdinarioPracticas]
+
+            for i in range(len(notas)):
+                if type(notas[i]) != float:
+                    notas[i] = float(notas[i])
+
+            nota_final = (notas[0]*0.3) + (notas[1]*0.3) + (notas[2]*0.3) + (notas[3]*0.3) + (notas[4]*0.4) + (notas[5]*0.4)
+            i.append(nota_final)
         print(f"Nombre y Apellidos: '{Nombre} {Apellidos} con una nota final de {notafinal}")
         file.close()
 # float(i["Parcial1"])
