@@ -34,8 +34,8 @@ def funcion2():
         reader = csv.reader(file, delimiter=';')
         next(reader, None) # omitir el encabezado
         for i in reader:
-            i["Final"] = (float(i["Parcial1"]) * 0.3) + (float(i["Parcial2"]) * 0.3) + (float(i["Ordinario1"]) * 0.3) + (float(i["Ordinario2"]) * 0.3) + (float(i["Practicas"]) * 0.4)
-        return "Final"
+            Nombre = i[1]
+            Final = ( float(i["Parcial1"]) + float(i["Parcial2"]) + float(i["Ordinario1"]) + float(i["Ordinario2"]) )* 0.3 + (float(i["Practicas"]) + float(i["OrdinarioPracticas"])) * 0.4
         print(f"Nombre: '{Nombre} con una nota final de {Final}")
 
 
