@@ -27,7 +27,7 @@ def funcion1(calificaciones):
 
 # crear una función que reciba una lista de diccionarios y añada a cada diccionario un nuevo par con la nota final del curso. El peso de cada parcial de teoría en la nota final es de un 30% mientras que el peso del examen de prácticas es de un 40%.
 def funcion2(calificaciones):
-    calificaciones = funcion1(calificaciones)
+    calificaciones = []
 
     for i in calificaciones:
         i["Final"] = (float(i["Parcial1"])*0.3 + float(i["Parcial2"])*0.3 + float(i["Ordinario1"])*0.1 + float(i["Ordinario2"])*0.1 + float(i["Practicas"])*0.4 + float(i["OrdinarioPracticas"])*0.4)
