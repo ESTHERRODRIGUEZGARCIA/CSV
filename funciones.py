@@ -42,7 +42,9 @@ def funcion2():
             Ordinario2 = i[6]
             Practicas = i[7]
             OrdinarioPracticas = i[8]
-            notas = [Parcial1, Parcial2, Ordinario1, Ordinario2, Practicas, OrdinarioPracticas]
+            notas = [Parcial1.replace(",","."), Parcial2.replace(",","."), Ordinario1.replace(",","."), Ordinario2.replace(",","."), Practicas.replace(",","."), OrdinarioPracticas.replace(",",".")]
+            for i in notas:
+                notafinal += float(i)
 
             for i in range(len(notas)):
                 if type(notas[i]) != float:
