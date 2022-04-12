@@ -14,12 +14,11 @@ def funcion1(calificaciones):
             if n == 1:
                 for i in row:
                     calificaciones.append(i)
-
             else:
                 for i in range(len(row)):
-                    calificaciones[i] = calificaciones[i] + row[i]
-
-                calificaciones.append(row[1])
+                    notas = calificaciones[i].split(',')
+                    notas.append(row[i])
+                    calificaciones[i] = ','.join(notas)
     file.close()
 
     return calificaciones
