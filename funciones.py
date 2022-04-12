@@ -28,6 +28,25 @@ funcion1()
 
 # Apellidos;Nombre;Asistencia;Parcial1;Parcial2;Ordinario1;Ordinario2;Practicas;OrdinarioPracticas;Final
 # crear una función que reciba una lista de diccionarios y añada a cada diccionario un nuevo par con la nota final del curso. cada parcial 30%; examen de prácticas 40%.
+def funcion2():
+    nombre_archivo = "calificaciones.csv"
+    with open(nombre_archivo, 'r') as file:
+        reader = csv.reader(file, delimiter=';')
+        notafinal = 0
+        for i in reader:
+            Apellidos = i[0]
+            Nombre = i[1]
+            Parcial1 = i[3]
+            Parcial2 = i[4]
+            Ordinario1 = i[5]
+            Ordinario2 = i[6]
+            Practicas = i[7]
+            OrdinarioPracticas = i[8]
+            notafinal = (float(Parcial1) * 0.3 + float(Parcial2) * 0.3 + float(Ordinario1) * 0.3 + float(Ordinario2) * 0.3 + float(Practicas) * 0.4 + float(OrdinarioPracticas) * 0.4)
+        print(f"Nombre y Apellidos: '{Nombre} {Apellidos} con una nota final de {notafinal}")
+        file.close()
+# float(i["Parcial1"])
+funcion2()
 
 
 
@@ -38,7 +57,15 @@ def funcion3():
         aprobados = []
         suspensos = []
         for i in reader:
-            if float(i["Asistencia"]) >= 75 and float(i["Parcial1"]) >= 4 and float(i["Parcial2"]) >= 4 and float(i["Ordinario1"]) >= 4 and float(i["Ordinario2"]) >= 4 and float(i["Practicas"]) >= 4 and float(i["OrdinarioPracticas"]) >= 4 and float(i["Final"]) >= 5:
+            Asistencia = i[2]
+            Parcial1 = i[3]
+            Parcial2 = i[4]
+            Ordinario1 = i[5]
+            Ordinario2 = i[6]
+            Practicas = i[7]
+            OrdinarioPracticas = i[8]
+            notafinal = float(Parcial1) * 0.3 + float(Parcial2) * 0.3 + float(Ordinario1) * 0.3 + float(Ordinario2) * 0.3 + float(Practicas) * 0.4 + float(OrdinarioPracticas) * 0.4
+            if float(Asistencia) >= 75 and float(Parcial1) >= 4 and float(Parcial2) >= 4 and float(Ordinario1) >= 4 and float(Ordinario2) >= 4 and float(Practicas) >= 4 and float(OrdinarioPracticas) >= 4 and float(notafinal) >= 5:
                 aprobados.append(i)
             else:
                 suspensos.append(i)
