@@ -12,7 +12,9 @@ def funcion1(calificaciones):
         for row in reader:
             n+=1
             if n == 1:
-                continue
+                for i in row:
+                    calificaciones.append(i)
+                    
             else:
                 calificaciones.append(row[1])
 
