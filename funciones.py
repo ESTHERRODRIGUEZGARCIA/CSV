@@ -4,7 +4,7 @@ import csv
 
 def funcion1(calificaciones):
     calificaciones = []
-    with open('calificaciones.csv', 'r') as file:
+    with open(calificaciones.csv, 'r') as file:
         reader = csv.reader(file)
         for row in reader:
             calificaciones.append(row)
