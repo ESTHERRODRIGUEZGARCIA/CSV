@@ -10,21 +10,10 @@ def funcion1():
         next(reader, None) # omitir el encabezado
         calificaciones = []
         for i in reader:
-            Apellidos = i[0]
-            Nombre = i[1]
-            Asistencia = i[2]
-            Parcial1 = i[3]
-            Parcial2 = i[4]
-            Ordinario1 = i[5]
-            Ordinario2 = i[6]
-            Practicas = i[7]
-            OrdinarioPracticas = i[8]
-            for i in nombre_archivo:
-                print(f"Apellidos: '{Apellidos}, Nombre: {Nombre}, % de Asistencia: {Asistencia}, Parcial 1: {Parcial1}, Parcial 2: {Parcial2}, Ordinario 1: {Ordinario1}, Ordinario 2: {Ordinario2}, Prácticas: {Practicas}, Ordinario Prácticas: {OrdinarioPracticas}\n")
-            file.close()
             calificaciones.append(i)
         file.close()
         return calificaciones
+        
 funcion1()
 
 
