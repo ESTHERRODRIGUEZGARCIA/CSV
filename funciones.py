@@ -53,7 +53,7 @@ funcion2()
 
 
 # crear una función que reciba una lista de diccionarios y devuelva dos listas, una con los aprobados y otra con los suspensos. Para aprobar: asistencia mayor o igual que el 75%, nota parciales y prácticas mayor o igual que 4 y nota final mayor o igual que 5.
-def funcion3(calificaciones):
+def funcion3():
     with open("calificaciones.csv", newline='') as file:
         reader = csv.reader(file, delimiter=';')
         calificaciones = []
