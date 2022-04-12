@@ -35,8 +35,8 @@ def funcion2():
         for i in reader:
             reader[i]["Nota final"] = (float(reader[i]["Parcial 1"])*0.3)+(float(reader[i]["Parcial 2"])*0.3)+(float(reader[i]["Ordinario Prácticas"])*0.4)
             Final = reader[i]["Nota final"]
-            Nombre = reader[i]["Nombre"]
-            Apellidos = reader[i]["Apellidos"]
+            Apellidos = i[0]
+            Nombre = i[1]
         print(f"Nombre y Apellidos: '{Nombre} {Apellidos} con una nota final de {Final}")
         file.close()
 
