@@ -45,7 +45,7 @@ def funcion2():
             notafinal = (float(Parcial1) * 0.3) + (float(Parcial2) * 0.3) + (float(Ordinario1) * 0.3) + (float(Ordinario2) * 0.3) + (float(Practicas) * 0.4) + (float(OrdinarioPracticas) * 0.4)
         print(f"Nombre y Apellidos: '{Nombre} {Apellidos} con una nota final de {notafinal}")
         file.close()
-
+# float(i["Parcial1"])
 funcion2()
 
 
@@ -56,12 +56,13 @@ def funcion3():
         calificaciones = []
         aprobados = []
         suspensos = []
-        for i in calificaciones:
+        for i in reader:
             if float(i["Asistencia"]) >= 75 and float(i["Parcial1"]) >= 4 and float(i["Parcial2"]) >= 4 and float(i["Ordinario1"]) >= 4 and float(i["Ordinario2"]) >= 4 and float(i["Practicas"]) >= 4 and float(i["OrdinarioPracticas"]) >= 4 and float(i["Final"]) >= 5:
                 aprobados.append(i)
             else:
                 suspensos.append(i)
         file.close()
-        return aprobados, suspensos
+        print(f"Los aprobados son: {aprobados}")
+        print(f"Los suspensos son: {suspensos}")
 
 funcion3()
