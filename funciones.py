@@ -28,12 +28,11 @@ def funcion1():
 
 # Apellidos;Nombre;Asistencia;Parcial1;Parcial2;Ordinario1;Ordinario2;Practicas;OrdinarioPracticas;Final
 # crear una función que reciba una lista de diccionarios y añada a cada diccionario un nuevo par con la nota final del curso. cada parcial 30%; examen de prácticas 40%.
-def funcion2(calificaciones):
+def funcion2():
     nombre_archivo = "calificaciones.csv"
     with open(nombre_archivo, 'w', newline='') as file:
         reader = csv.reader(file, delimiter=';')
-        # omitir el encabezado
-        next(reader, None)
+        next(reader, None) # omitir el encabezado
         for i in reader:
             i["Final"] = (float(i["Parcial1"]) * 0.3) + (float(i["Parcial2"]) * 0.3) + (float(i["Ordinario1"]) * 0.3) + (float(i["Ordinario2"]) * 0.3) + (float(i["Practicas"]) * 0.4)
         return "Final"
