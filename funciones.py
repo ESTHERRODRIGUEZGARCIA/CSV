@@ -32,18 +32,7 @@ def funcion2(calificaciones):
     linea = linea.rstrip('\n')
     separador = ";"
     lista = linea.split(separador)
-    apellido = lista[0]
-    nombre = lista[1]
-    asistencia = lista[2]
-    parcial1 = lista[3]
-    parcial2 = lista[4]
-    ordinario1 = lista[5]
-    ordinario2 = lista[6]
-    practicas = lista[7]
-    ordinarioPracticas = lista[8]
-    final = lista[9]
-    calificaciones.append({"Apellidos": apellido, "Nombre": nombre, "Asistencia": asistencia, "Parcial1": parcial1, "Parcial2": parcial2, "Ordinario1": ordinario1, "Ordinario2": ordinario2, "Practicas": practicas, "OrdinarioPracticas": ordinarioPracticas, "Final": final})
-    return calificaciones
+    
     with open(nombre_archivo, 'w', newline='') as file:
         writer = csv.writer(file, delimiter=';')
         for i in calificaciones:
