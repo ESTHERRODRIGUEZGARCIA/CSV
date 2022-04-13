@@ -16,6 +16,7 @@ Una función que reciba una lista de diccionarios como la que devuelve la funci�
 El código empleado es el siguiente: 
 
 ````
+
 import csv
 
 # csv # Apellidos;Nombre;Asistencia;Parcial1;Parcial2;Ordinario1;Ordinario2;Practicas;OrdinarioPracticas;Final
@@ -60,7 +61,20 @@ def funcion2():
             Ordinario2 = i[6]
             Practicas = i[7]
             OrdinarioPracticas = i[8]
-            notafinal = (float(Parcial1) * 0.3 + float(Parcial2) * 0.3 + float(Ordinario1) * 0.3 + float(Ordinario2) * 0.3 + float(Practicas) * 0.4 + float(OrdinarioPracticas) * 0.4)
+            notas = [Parcial1.replace(",","."), Parcial2.replace(",","."), Ordinario1.replace(",","."), Ordinario2.replace(",","."), Practicas.replace(",","."), OrdinarioPracticas.replace(",",".")]
+            for i in notas:
+                notafinal += float(i)
+            notafinal = notafinal / 6
+            notafinal = round(notafinal, 2)
+            i.append(notafinal)
+
+
+            for i in range(len(notas)):
+                if type(notas[i]) != float:
+                    notas[i] = float(notas[i])
+
+            notafinal = (notas[0]*0.3) + (notas[1]*0.3) + (notas[2]*0.3) + (notas[3]*0.3) + (notas[4]*0.4) + (notas[5]*0.4)
+            i.append(notafinal)
         print(f"Nombre y Apellidos: '{Nombre} {Apellidos} con una nota final de {notafinal}")
         file.close()
 # float(i["Parcial1"])
@@ -92,5 +106,6 @@ def funcion3():
         print(f"Los suspensos son: {suspensos}")
 
 funcion3()
+
 
 ````
